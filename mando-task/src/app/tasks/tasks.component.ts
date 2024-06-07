@@ -9,5 +9,43 @@ import { TaskComponent } from './task/task.component';
   imports: [TaskComponent],
 })
 export class TasksComponent {
-  @Input() name?: string;
+  @Input({ required: true}) userId!: string;
+  @Input({ required: true}) name!: string;
+  tasks = [
+    {
+      id: 't1',
+      userId: 'u1',
+      title: 'Train Grogu',
+      summary: "Grogu needs to improve he's blaster accuracy and lightsaber combat",
+      dueDate: '2025-12-31'
+    },
+
+    {
+      id: 't2',
+      userId: 'u2',
+      title: 'Practice the force',
+      summary: "Meditate to get stronger in utilizing the force",
+      dueDate: '2025-10-13'
+    },
+
+    {
+      id: 't3',
+      userId: 'u3',
+      title: 'Retake Mandalore',
+      summary: "After years of having a toxic atmosphere, mandalore atmosphere is clean enough for reconstruction and repopulation",
+      dueDate: '2030-12-31'
+    },
+
+    {
+      id: 't4',
+      userId: 'u4',
+      title: 'Train the foundlings',
+      summary: "The new foundlings need to be train in the ways of the mandalore",
+      dueDate: '2025-12-31'
+    }
+  ];
+
+  get selectedUserTasks() {
+    return this.tasks.filter((task) => task.userId === this.userId);
+  }
 }
