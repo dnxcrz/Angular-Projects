@@ -9,8 +9,8 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background: radial-gradient(circle at top left, #181023, #0b0519);
-  color: #c3b3d8;
+  background-image: linear-gradient(to bottom, #4d4d4d, #464553, #3b3e59, #29385f, #003366);
+  color: #ffffff;
   margin: 0;
   padding: 0;
   height: 100%;
