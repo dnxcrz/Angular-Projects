@@ -42,7 +42,24 @@ export class TasksComponent {
       title: 'Train the foundlings',
       summary: "The new foundlings need to be train in the ways of the mandalore",
       dueDate: '2025-12-31'
+    },
+
+    {
+      id: 't5',
+      userId: 'u5',
+      title: 'Conquer Tatooine',
+      summary: "After years of infight between the tatooine gangs, that have left them weak, the planet is ready to be conquered",
+      dueDate: '2035-12-31'
+    },
+
+    {
+      id: 't6',
+      userId: 'u6',
+      title: 'Repair Din Djarin Armor',
+      summary: "Din Djarin armor needs repair after the last battle.",
+      dueDate: '2024-7-15'
     }
+    
   ];
 
   get selectedUserTasks() {
