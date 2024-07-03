@@ -1,4 +1,10 @@
-import { Component, ViewEncapsulation, input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewEncapsulation,
+  inject,
+  input,
+} from '@angular/core';
 
 @Component({
   selector: 'app-control',
@@ -7,7 +13,17 @@ import { Component, ViewEncapsulation, input } from '@angular/core';
   templateUrl: './control.component.html',
   styleUrl: './control.component.css',
   encapsulation: ViewEncapsulation.None,
+  host: {
+    class: 'control',
+    '(click)': 'onClick()',
+  },
 })
 export class ControlComponent {
   label = input.required<string>();
+  private el = inject(ElementRef);
+
+  onClick() {
+    console.log('CLiked!');
+    console.log('el');
+  }
 }
