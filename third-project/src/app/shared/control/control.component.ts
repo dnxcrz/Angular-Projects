@@ -1,7 +1,9 @@
 import {
   Component,
+  ContentChild,
   ElementRef,
   ViewEncapsulation,
+  contentChild,
   inject,
   input,
 } from '@angular/core';
@@ -21,9 +23,12 @@ import {
 export class ControlComponent {
   label = input.required<string>();
   private el = inject(ElementRef);
+  private control =
+    contentChild<ElementRef<HTMLInputElement | HTMLTextAreaElement>>('input');
 
   onClick() {
     console.log('CLiked!');
     console.log('el');
+    console.log(this.control());
   }
 }
